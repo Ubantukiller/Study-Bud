@@ -326,7 +326,7 @@ def main():
 
     with st.sidebar:
         st.title("")
-        mode = st.radio("Choose mode:", ( "Quiz Generator", "PDF Teacher", "Screenshot Analyzer"))
+        mode = st.radio("Choose mode:", ("PDF Analyzer", "Quiz Generator", "Screenshot Analyzer"))
         st.title("Upload PDF")
         pdf_docs = st.file_uploader("Drop your PDF files here", accept_multiple_files=True)
         process_button = st.button("Process PDF")
@@ -339,8 +339,8 @@ def main():
             st.session_state.raw_text = raw_text
             st.success("PDF processed successfully!")
 
-    if mode == "PDF Teacher":
-        st.subheader("PDF Teacher")
+    if mode == "PDF Analyzer":
+        st.subheader("PDF Analyzer")
         user_question = st.text_input("Ask a question about the PDF content:")
         if user_question:
             chain = get_conversational_chain()
@@ -382,6 +382,7 @@ def main():
 
     st.markdown("<br><br><br><br><br><br><br>", unsafe_allow_html=True)
     st.markdown("---")
+    st.markdown("Made with ❤️ by KANAV")
 
 if __name__ == "__main__":
     main()
