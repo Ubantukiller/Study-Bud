@@ -339,8 +339,8 @@ def main():
             st.session_state.raw_text = raw_text
             st.success("PDF processed successfully!")
 
-    if mode == "PDF Analyzer":
-        st.subheader("PDF Analyzer")
+    if mode == "PDF Teacher":
+        st.subheader("PDF Teacher")
         user_question = st.text_input("Ask a question about the PDF content:")
         if user_question:
             chain = get_conversational_chain()
